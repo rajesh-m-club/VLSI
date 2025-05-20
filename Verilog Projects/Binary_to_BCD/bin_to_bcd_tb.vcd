@@ -1,0 +1,117 @@
+$date
+	Tue May 20 11:50:26 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_bin_to_bcd $end
+$var wire 12 ! bcd [11:0] $end
+$var parameter 65 " BCD_DIGITS $end
+$var parameter 32 # BIN_WIDTH $end
+$var reg 8 $ bin [7:0] $end
+$scope module uut $end
+$var wire 8 % bin [7:0] $end
+$var parameter 65 & bcd_digits $end
+$var parameter 32 ' bin_width $end
+$var parameter 98 ( n $end
+$var reg 12 ) bcd [11:0] $end
+$var reg 20 * dig [19:0] $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 + i [31:0] $end
+$scope begin $ivl_for_loop1 $end
+$var integer 32 , j [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope task display_bcd $end
+$var integer 32 - i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b10100 (
+b1000 '
+b11 &
+b1000 #
+b11 "
+$end
+#0
+$dumpvars
+bx -
+b11 ,
+b1000 +
+b0 *
+b0 )
+b0 %
+b0 $
+b0 !
+$end
+#10000
+b101 !
+b101 )
+b11 ,
+b1000 +
+b10100000000 *
+b101 $
+b101 %
+b11111111111111111111111111111111 -
+#20000
+b1001 !
+b1001 )
+b11 ,
+b1000 +
+b100100000000 *
+b1001 $
+b1001 %
+b11111111111111111111111111111111 -
+#30000
+b10010 !
+b10010 )
+b11 ,
+b1000 +
+b1001000000000 *
+b1100 $
+b1100 %
+b11111111111111111111111111111111 -
+#40000
+b1000101 !
+b1000101 )
+b11 ,
+b1000 +
+b100010100000000 *
+b101101 $
+b101101 %
+b11111111111111111111111111111111 -
+#50000
+b10011001 !
+b10011001 )
+b11 ,
+b1000 +
+b1001100100000000 *
+b1100011 $
+b1100011 %
+b11111111111111111111111111111111 -
+#60000
+b100100011 !
+b100100011 )
+b11 ,
+b1000 +
+b10010001100000000 *
+b1111011 $
+b1111011 %
+b11111111111111111111111111111111 -
+#70000
+b1001010101 !
+b1001010101 )
+b11 ,
+b1000 +
+b100101010100000000 *
+b11111111 $
+b11111111 %
+b11111111111111111111111111111111 -
+#80000
+b11111111111111111111111111111111 -
