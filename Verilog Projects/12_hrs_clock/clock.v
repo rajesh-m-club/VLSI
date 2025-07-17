@@ -1,4 +1,4 @@
-module top_module(
+module 12_hrs_clock(
     input clk,
     input reset,
     input ena,
