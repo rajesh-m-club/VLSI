@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # File path
-peak_file = r"C:/Users/rajes/OneDrive/Desktop/VLSI/BPM_counter/peak_detector/peak_output.csv"
+peak_file = r"C:/Users/rajes/OneDrive/Desktop/VLSI/BPM_counter/DigitalBlock/peak_detector/peak_output.csv"
 
 # Read CSV
 df = pd.read_csv(peak_file, names=["Index", "PPG_in", "Peak_Pulse"])
