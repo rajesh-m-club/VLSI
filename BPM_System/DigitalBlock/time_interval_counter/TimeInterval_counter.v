@@ -68,6 +68,10 @@ module TimeInterval_counter (
                     time_counter <= time_counter; // hold value
                     valid        <= 1'b1;         // assert until BPMCalc_Done
                 end
+		default : begin
+			time_counter <= 6'b0;
+			valid <= 1'b0;
+		end
             endcase
         end
     end

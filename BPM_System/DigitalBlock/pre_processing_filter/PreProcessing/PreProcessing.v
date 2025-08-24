@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 // =============================================================
 // Integrated PreProcessing Module (HPF -> LPF -> DownSampler)
 // Single enable pin for entire pipeline

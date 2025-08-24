@@ -3,24 +3,28 @@ module FIFO #(
     parameter DEPTH = 32
 )(
     input  wire                  clk,
-    input  wire                  reset,    // Active-high synchronous reset
+    input  wire                  reset,
     input  wire                  wr_en,
     input  wire                  rd_en,
     input  wire [WIDTH-1:0]      Data_in,
     output reg  [WIDTH-1:0]      Data_out,
-    output wire                   full,
-    output wire                   empty
+    output wire                  full,
+    output wire                  empty
 );
 
-    // Memory
-    reg [WIDTH-1:0] ppg_data [DEPTH-1:0];
+    // Localparams
+    localparam PTR_WIDTH = $clog2(DEPTH);
+    localparam [PTR_WIDTH-1:0] DEPTH_M1 = PTR_WIDTH'(DEPTH - 1);
+
+    // Memory array
+    reg [WIDTH-1:0] ppg_data [0:DEPTH-1];
 
     // Pointers
-    reg [$clog2(DEPTH)-1:0] wr_ptr;
-    reg [$clog2(DEPTH)-1:0] rd_ptr;
+    reg [PTR_WIDTH-1:0] wr_ptr;
+    reg [PTR_WIDTH-1:0] rd_ptr;
 
     // Counter
-    reg [$clog2(DEPTH):0] count;
+    reg [PTR_WIDTH:0] count;
 
     assign full  = (count == DEPTH);
     assign empty = (count == 0);
@@ -35,9 +39,16 @@ module FIFO #(
             // Write
             if (wr_en) begin
                 ppg_data[wr_ptr] <= Data_in;
-                wr_ptr <= (wr_ptr + 1) % DEPTH;
+                if (wr_ptr == DEPTH_M1)
+                    wr_ptr <= 0;
+                else
+                    wr_ptr <= wr_ptr + 1;
+
                 if (full) begin
-                    rd_ptr <= (rd_ptr + 1) % DEPTH; // discard oldest data
+                    if (rd_ptr == DEPTH_M1)
+                        rd_ptr <= 0;
+                    else
+                        rd_ptr <= rd_ptr + 1;
                 end else begin
                     count <= count + 1;
                 end
@@ -46,7 +57,11 @@ module FIFO #(
             // Read
             if (rd_en && !empty) begin
                 Data_out <= ppg_data[rd_ptr];
-                rd_ptr <= (rd_ptr + 1) % DEPTH;
+                if (rd_ptr == DEPTH_M1)
+                    rd_ptr <= 0;
+                else
+                    rd_ptr <= rd_ptr + 1;
+
                 count <= count - 1;
             end
         end
