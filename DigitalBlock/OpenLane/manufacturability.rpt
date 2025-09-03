@@ -1,0 +1,19 @@
+Design Name: DigitalBlock
+Run Directory: /openlane/designs/DigitalBlock/runs/RUN_2025.09.03_10.24.40
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/DigitalBlock/runs/RUN_2025.09.03_10.24.40/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/DigitalBlock/runs/RUN_2025.09.03_10.24.40/logs/signoff/41-DigitalBlock.lef.lvs.log
+Number of nets: 1665                       |Number of nets: 1665                       
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/DigitalBlock/runs/RUN_2025.09.03_10.24.40/logs/signoff/43-arc.log
+Pin violations: 0
+Net violations: 0
