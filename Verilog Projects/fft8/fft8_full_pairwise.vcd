@@ -1,0 +1,499 @@
+$date
+	Wed Apr 08 13:25:11 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_fft8_stage123_pairwise $end
+$var wire 1 ! s3_valid $end
+$var wire 1 " s2_valid $end
+$var wire 11 # s2_sum2_r [10:0] $end
+$var wire 11 $ s2_sum2_i [10:0] $end
+$var wire 11 % s2_sum1_r [10:0] $end
+$var wire 11 & s2_sum1_i [10:0] $end
+$var wire 11 ' s2_diff2_r [10:0] $end
+$var wire 11 ( s2_diff2_i [10:0] $end
+$var wire 11 ) s2_diff1_r [10:0] $end
+$var wire 11 * s2_diff1_i [10:0] $end
+$var wire 1 + s1_valid $end
+$var wire 9 , s1_sum_r [8:0] $end
+$var wire 9 - s1_sum_i [8:0] $end
+$var wire 9 . s1_diff_r [8:0] $end
+$var wire 9 / s1_diff_i [8:0] $end
+$var wire 13 0 X6_r [12:0] $end
+$var wire 13 1 X6_i [12:0] $end
+$var wire 13 2 X4_r [12:0] $end
+$var wire 13 3 X4_i [12:0] $end
+$var wire 13 4 X2_r [12:0] $end
+$var wire 13 5 X2_i [12:0] $end
+$var wire 13 6 X0_r [12:0] $end
+$var wire 13 7 X0_i [12:0] $end
+$var reg 1 8 clk $end
+$var reg 1 9 rst $end
+$var reg 1 : valid_in $end
+$var reg 8 ; xi [7:0] $end
+$var reg 8 < xr [7:0] $end
+$var integer 32 = fout [31:0] $end
+$var integer 32 > fr_imag [31:0] $end
+$var integer 32 ? fr_real [31:0] $end
+$var integer 32 @ i [31:0] $end
+$var integer 32 A out_count [31:0] $end
+$var integer 32 B status_i [31:0] $end
+$var integer 32 C status_r [31:0] $end
+$scope module stage1 $end
+$var wire 1 8 clk $end
+$var wire 1 9 rst $end
+$var wire 1 : valid_in $end
+$var wire 8 D xi [7:0] $end
+$var wire 8 E xr [7:0] $end
+$var reg 8 F a_i [7:0] $end
+$var reg 8 G a_r [7:0] $end
+$var reg 8 H b_i [7:0] $end
+$var reg 8 I b_r [7:0] $end
+$var reg 3 J count [2:0] $end
+$var reg 9 K diff_i [8:0] $end
+$var reg 9 L diff_r [8:0] $end
+$var reg 9 M sum_i [8:0] $end
+$var reg 9 N sum_r [8:0] $end
+$var reg 1 O valid_d $end
+$var reg 1 + valid_out $end
+$upscope $end
+$scope module stage2 $end
+$var wire 1 8 clk $end
+$var wire 9 P diff_in_i [8:0] $end
+$var wire 9 Q diff_in_r [8:0] $end
+$var wire 1 9 rst $end
+$var wire 9 R sum_in_i [8:0] $end
+$var wire 9 S sum_in_r [8:0] $end
+$var wire 1 + valid_in $end
+$var reg 2 T count [1:0] $end
+$var reg 11 U diff1_i [10:0] $end
+$var reg 11 V diff1_r [10:0] $end
+$var reg 11 W diff2_i [10:0] $end
+$var reg 11 X diff2_r [10:0] $end
+$var reg 11 Y sum1_i [10:0] $end
+$var reg 11 Z sum1_r [10:0] $end
+$var reg 11 [ sum2_i [10:0] $end
+$var reg 11 \ sum2_r [10:0] $end
+$var reg 1 " valid_out $end
+$upscope $end
+$scope module stage3 $end
+$var wire 1 8 clk $end
+$var wire 11 ] diff_in1_i [10:0] $end
+$var wire 11 ^ diff_in1_r [10:0] $end
+$var wire 11 _ diff_in2_i [10:0] $end
+$var wire 11 ` diff_in2_r [10:0] $end
+$var wire 1 9 rst $end
+$var wire 11 a sum_in1_i [10:0] $end
+$var wire 11 b sum_in1_r [10:0] $end
+$var wire 11 c sum_in2_i [10:0] $end
+$var wire 11 d sum_in2_r [10:0] $end
+$var wire 1 " valid_in $end
+$var wire 19 e mult2_r [18:0] $end
+$var wire 19 f mult2_i [18:0] $end
+$var wire 19 g mult1_r [18:0] $end
+$var wire 19 h mult1_i [18:0] $end
+$var reg 13 i X0_i [12:0] $end
+$var reg 13 j X0_r [12:0] $end
+$var reg 13 k X2_i [12:0] $end
+$var reg 13 l X2_r [12:0] $end
+$var reg 13 m X4_i [12:0] $end
+$var reg 13 n X4_r [12:0] $end
+$var reg 13 o X6_i [12:0] $end
+$var reg 13 p X6_r [12:0] $end
+$var reg 1 q pair_cnt $end
+$var reg 1 ! valid_out $end
+$var reg 8 r wi1 [7:0] $end
+$var reg 8 s wi2 [7:0] $end
+$var reg 8 t wr1 [7:0] $end
+$var reg 8 u wr2 [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 u
+b1111111 t
+b10000001 s
+b0 r
+0q
+b0 p
+b0 o
+b0 n
+b0 m
+b0 l
+b0 k
+b0 j
+b0 i
+b0 h
+b0 g
+b0 f
+b0 e
+b0 d
+b0 c
+b0 b
+b0 a
+b0 `
+b0 _
+b0 ^
+b0 ]
+b0 \
+b0 [
+b0 Z
+b0 Y
+b0 X
+b0 W
+b0 V
+b0 U
+b0 T
+bx S
+bx R
+bx Q
+bx P
+0O
+bx N
+bx M
+bx L
+bx K
+b0 J
+bx I
+bx H
+bx G
+bx F
+b0 E
+b0 D
+bx C
+bx B
+b0 A
+bx @
+b10000000000000000000000000000100 ?
+b10000000000000000000000000000101 >
+b10000000000000000000000000000011 =
+b0 <
+b0 ;
+0:
+19
+08
+b0 7
+b0 6
+b0 5
+b0 4
+b0 3
+b0 2
+b0 1
+b0 0
+bx /
+bx .
+bx -
+bx ,
+0+
+b0 *
+b0 )
+b0 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+0"
+0!
+$end
+#5000
+18
+#10000
+08
+#15000
+18
+#20000
+08
+09
+#25000
+18
+#30000
+08
+b1 B
+b1 C
+b0 @
+1:
+#35000
+b1 J
+18
+#40000
+08
+b10111 <
+b10111 E
+b1 @
+#45000
+b10 J
+18
+#50000
+08
+b0 <
+b0 E
+b10 @
+#55000
+b11 J
+18
+#60000
+08
+b10111 <
+b10111 E
+b11 @
+#65000
+b100 J
+18
+#70000
+08
+b0 <
+b0 E
+b100 @
+#75000
+b101 J
+1O
+b0 H
+b0 I
+b0 F
+b0 G
+18
+#80000
+08
+b11101001 <
+b11101001 E
+b101 @
+#85000
+1+
+b0 /
+b0 K
+b0 P
+b0 .
+b0 L
+b0 Q
+b0 -
+b0 M
+b0 R
+b0 ,
+b0 N
+b0 S
+b110 J
+b11101001 I
+b10111 G
+1O
+18
+#90000
+08
+b0 <
+b0 E
+b110 @
+#95000
+b101110 .
+b101110 L
+b101110 Q
+b111 J
+b0 I
+b0 G
+1O
+1+
+b1 T
+18
+#100000
+08
+b11101001 <
+b11101001 E
+b111 @
+#105000
+b10 T
+b0 .
+b0 L
+b0 Q
+b0 J
+b11101001 I
+b10111 G
+1O
+1+
+18
+#110000
+08
+b0 <
+b0 E
+0:
+b1000 @
+#115000
+b101110 .
+b101110 L
+b101110 Q
+0O
+1+
+b11 T
+1"
+18
+#120000
+08
+#125000
+b10100101 s
+b10100101 u
+b10100101 r
+b1011011 t
+b0 e
+b1111111111110111110 f
+b1111111111110111110 h
+b0 g
+1q
+1!
+b0 T
+b101110 (
+b101110 W
+b101110 _
+b101110 '
+b101110 X
+b101110 `
+b11111010010 *
+b11111010010 U
+b11111010010 ]
+b101110 )
+b101110 V
+b101110 ^
+1"
+0+
+18
+#130000
+08
+#135000
+b101101 e
+b1111111111111010010 f
+b101101 g
+b1111111111111010010 h
+b10000001 s
+b0 u
+b0 r
+b1111111 t
+0"
+0q
+b1000010 1
+b1000010 o
+b1111110111110 5
+b1111110111110 k
+b1000010 3
+b1000010 m
+b1111110111110 7
+b1111110111110 i
+1!
+b100 A
+18
+#140000
+08
+#145000
+0!
+b1000 A
+18
+#150000
+08
+#155000
+18
+#160000
+08
+#165000
+18
+#170000
+08
+#175000
+18
+#180000
+08
+#185000
+18
+#190000
+08
+#195000
+18
+#200000
+08
+#205000
+18
+#210000
+08
+#215000
+18
+#220000
+08
+#225000
+18
+#230000
+08
+#235000
+18
+#240000
+08
+#245000
+18
+#250000
+08
+#255000
+18
+#260000
+08
+#265000
+18
+#270000
+08
+#275000
+18
+#280000
+08
+#285000
+18
+#290000
+08
+#295000
+18
+#300000
+08
+#305000
+18
+#310000
+08
+#315000
+18
+#320000
+08
+#325000
+18
+#330000
+08
+#335000
+18
+#340000
+08
+#345000
+18
+#350000
+08
+#355000
+18
+#360000
+08
+#365000
+18
+#370000
+08
+#375000
+18
+#380000
+08
+#385000
+18
+#390000
+08
+#395000
+18
+#400000
+08
+#405000
+18
+#410000
+08

@@ -1,0 +1,352 @@
+$date
+	Wed Apr 08 13:25:00 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_fft8_stage12_pairwise $end
+$var wire 1 ! s2_valid_out $end
+$var wire 11 " s2_sum2_r [10:0] $end
+$var wire 11 # s2_sum2_i [10:0] $end
+$var wire 11 $ s2_sum1_r [10:0] $end
+$var wire 11 % s2_sum1_i [10:0] $end
+$var wire 11 & s2_diff2_r [10:0] $end
+$var wire 11 ' s2_diff2_i [10:0] $end
+$var wire 11 ( s2_diff1_r [10:0] $end
+$var wire 11 ) s2_diff1_i [10:0] $end
+$var wire 1 * s1_valid $end
+$var wire 9 + s1_sum_r [8:0] $end
+$var wire 9 , s1_sum_i [8:0] $end
+$var wire 9 - s1_diff_r [8:0] $end
+$var wire 9 . s1_diff_i [8:0] $end
+$var reg 1 / clk $end
+$var reg 1 0 rst $end
+$var reg 1 1 valid_in $end
+$var reg 8 2 xi [7:0] $end
+$var reg 8 3 xr [7:0] $end
+$var integer 32 4 fout [31:0] $end
+$var integer 32 5 fr_imag [31:0] $end
+$var integer 32 6 fr_real [31:0] $end
+$var integer 32 7 i [31:0] $end
+$var integer 32 8 out_count [31:0] $end
+$var integer 32 9 status_i [31:0] $end
+$var integer 32 : status_r [31:0] $end
+$scope module stage1 $end
+$var wire 1 / clk $end
+$var wire 1 0 rst $end
+$var wire 1 1 valid_in $end
+$var wire 8 ; xi [7:0] $end
+$var wire 8 < xr [7:0] $end
+$var reg 8 = a_i [7:0] $end
+$var reg 8 > a_r [7:0] $end
+$var reg 8 ? b_i [7:0] $end
+$var reg 8 @ b_r [7:0] $end
+$var reg 3 A count [2:0] $end
+$var reg 9 B diff_i [8:0] $end
+$var reg 9 C diff_r [8:0] $end
+$var reg 9 D sum_i [8:0] $end
+$var reg 9 E sum_r [8:0] $end
+$var reg 1 F valid_d $end
+$var reg 1 * valid_out $end
+$upscope $end
+$scope module stage2 $end
+$var wire 1 / clk $end
+$var wire 9 G diff_in_i [8:0] $end
+$var wire 9 H diff_in_r [8:0] $end
+$var wire 1 0 rst $end
+$var wire 9 I sum_in_i [8:0] $end
+$var wire 9 J sum_in_r [8:0] $end
+$var wire 1 * valid_in $end
+$var reg 2 K count [1:0] $end
+$var reg 11 L diff1_i [10:0] $end
+$var reg 11 M diff1_r [10:0] $end
+$var reg 11 N diff2_i [10:0] $end
+$var reg 11 O diff2_r [10:0] $end
+$var reg 11 P sum1_i [10:0] $end
+$var reg 11 Q sum1_r [10:0] $end
+$var reg 11 R sum2_i [10:0] $end
+$var reg 11 S sum2_r [10:0] $end
+$var reg 1 ! valid_out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 S
+b0 R
+b0 Q
+b0 P
+b0 O
+b0 N
+b0 M
+b0 L
+b0 K
+bx J
+bx I
+bx H
+bx G
+0F
+bx E
+bx D
+bx C
+bx B
+b0 A
+bx @
+bx ?
+bx >
+bx =
+b0 <
+b0 ;
+bx :
+bx 9
+b0 8
+bx 7
+b10000000000000000000000000000100 6
+b10000000000000000000000000000101 5
+b10000000000000000000000000000011 4
+b0 3
+b0 2
+01
+10
+0/
+bx .
+bx -
+bx ,
+bx +
+0*
+b0 )
+b0 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+0!
+$end
+#5000
+1/
+#10000
+0/
+#15000
+1/
+#20000
+0/
+00
+#25000
+1/
+#30000
+0/
+b1 9
+b1 :
+b0 7
+11
+#35000
+b1 A
+1/
+#40000
+0/
+b10111 3
+b10111 <
+b1 7
+#45000
+b10 A
+1/
+#50000
+0/
+b0 3
+b0 <
+b10 7
+#55000
+b11 A
+1/
+#60000
+0/
+b10111 3
+b10111 <
+b11 7
+#65000
+b100 A
+1/
+#70000
+0/
+b0 3
+b0 <
+b100 7
+#75000
+b101 A
+1F
+b0 ?
+b0 @
+b0 =
+b0 >
+1/
+#80000
+0/
+b11101001 3
+b11101001 <
+b101 7
+#85000
+1*
+b0 .
+b0 B
+b0 G
+b0 -
+b0 C
+b0 H
+b0 ,
+b0 D
+b0 I
+b0 +
+b0 E
+b0 J
+b110 A
+b11101001 @
+b10111 >
+1F
+1/
+#90000
+0/
+b0 3
+b0 <
+b110 7
+#95000
+b101110 -
+b101110 C
+b101110 H
+b111 A
+b0 @
+b0 >
+1F
+1*
+b1 K
+1/
+#100000
+0/
+b11101001 3
+b11101001 <
+b111 7
+#105000
+b10 K
+b0 -
+b0 C
+b0 H
+b0 A
+b11101001 @
+b10111 >
+1F
+1*
+1/
+#110000
+0/
+b0 3
+b0 <
+01
+b1000 7
+#115000
+b101110 -
+b101110 C
+b101110 H
+0F
+1*
+b11 K
+1!
+1/
+#120000
+0/
+#125000
+b0 K
+b101110 '
+b101110 N
+b101110 &
+b101110 O
+b11111010010 )
+b11111010010 L
+b101110 (
+b101110 M
+1!
+0*
+b1 8
+1/
+#130000
+0/
+#135000
+0!
+b10 8
+1/
+#140000
+0/
+#145000
+1/
+#150000
+0/
+#155000
+1/
+#160000
+0/
+#165000
+1/
+#170000
+0/
+#175000
+1/
+#180000
+0/
+#185000
+1/
+#190000
+0/
+#195000
+1/
+#200000
+0/
+#205000
+1/
+#210000
+0/
+#215000
+1/
+#220000
+0/
+#225000
+1/
+#230000
+0/
+#235000
+1/
+#240000
+0/
+#245000
+1/
+#250000
+0/
+#255000
+1/
+#260000
+0/
+#265000
+1/
+#270000
+0/
+#275000
+1/
+#280000
+0/
+#285000
+1/
+#290000
+0/
+#295000
+1/
+#300000
+0/
+#305000
+1/
+#310000
+0/
