@@ -1,0 +1,61 @@
+module ppg_interface #(
+    parameter WIDTH = 10,
+    parameter DEPTH = 32
+)(
+    input  wire                  clk,
+    input  wire                  reset,    // Active-high synchronous reset
+    input  wire                  wr_en,
+    input  wire                  rd_en,
+    input  wire [WIDTH-1:0]      Data_in,
+    output reg  [WIDTH-1:0]      Data_out,
+    output reg                   full,
+    output reg                   empty
+);
+
+    // Memory
+    reg [WIDTH-1:0] ppg_data [0:DEPTH-1];
+    
+    // Pointers
+    reg [$clog2(DEPTH)-1:0] wr_ptr;
+    reg [$clog2(DEPTH)-1:0] rd_ptr;
+    
+    // Counter
+    reg [$clog2(DEPTH):0] count;
+
+    always @(posedge clk) begin
+        if (reset) begin
+            // Reset all registers
+            wr_ptr   <= 0;
+            rd_ptr   <= 0;
+            count    <= 0;
+            full     <= 0;
+            empty    <= 1;
+            Data_out <= 0;
+        end else begin
+            // Write function
+            if (wr_en && !full) begin
+                ppg_data[wr_ptr] <= Data_in;
+                wr_ptr <= wr_ptr + 1;
+            end
+            else wr_ptr <= wr_ptr
+
+            // Read function
+            if (rd_en && !empty) begin
+                Data_out <= ppg_data[rd_ptr];
+                rd_ptr <= rd_ptr + 1;
+            end
+            else rd_ptr <= rd_ptr;
+
+            // Count update
+            case ({wr_en && !full, rd_en && !empty})
+                2'b01: count <= count - 1;
+                2'b10: count <= count + 1;
+                default: count <= count;
+            endcase
+
+            // FIFO status flags
+            full  <= (count == DEPTH);
+            empty <= (count == 0);
+        end
+    end
+endmodule
